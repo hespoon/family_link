@@ -18,7 +18,23 @@ export default function SettingsPage() {
     router.push('/login');
   };
 
-  const sections = [
+  interface SettingItem {
+    label: string;
+    icon: string;
+    color: string;
+    badge?: string;
+    value?: string;
+    valueColor?: string;
+    toggle?: boolean;
+    checked?: boolean;
+  }
+
+  interface SettingSection {
+    title: string;
+    items: SettingItem[];
+  }
+
+  const sections: SettingSection[] = [
     {
       title: '账户详情',
       items: [
